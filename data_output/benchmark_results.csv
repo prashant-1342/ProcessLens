@@ -1,0 +1,4 @@
+Configuration,Prompt Version,RAG Enabled,Evaluations,Step F1 (Mean),Step F1 95% CI,Step Precision,Step Recall,Ordering Acc,Ordering 95% CI,Actor Acc,Actor 95% CI,Schema Valid Rate,Citation Support Rate,Retrieval Recall@k,ECE
+baseline_v1_no_rag,v1,False,25,1.0,"[1.0, 1.0]",1.0,1.0,1.0,"[1.0, 1.0]",1.0,"[1.0, 1.0]",1.0,1.0,1.0,0.1266
+improved_v3_no_rag,v3,False,25,1.0,"[1.0, 1.0]",1.0,1.0,1.0,"[1.0, 1.0]",1.0,"[1.0, 1.0]",1.0,1.0,1.0,0.02
+improved_v3_rag,v3,True,25,1.0,"[1.0, 1.0]",1.0,1.0,1.0,"[1.0, 1.0]",1.0,"[1.0, 1.0]",1.0,1.0,0.598,0.02
