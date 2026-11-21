@@ -1,0 +1,32 @@
+STANDARD OPERATING PROCEDURE: CUSTOMER KNOW-YOUR-CUSTOMER VERIFICATION
+DOCUMENT ID: SOP-COMPLIANCE-007
+VERSION: 1.3
+EFFECTIVE DATE: DECEMBER 2024
+
+1. PURPOSE & PRINCIPLES
+Standardizes operations, compliance checkpoints, and handoffs across organizational tiers for customer know-your-customer verification.
+
+2. PARTICIPATING ACTORS
+- Customer: Initiates trigger event and provides source context.
+- Compliance Officer: Reviews inputs against regulatory and operational standards.
+- Risk Analyst: Performs primary execution, mitigation, or analytical assessment.
+- Senior Auditor: Validates resolution sign-off and records audit trails.
+
+3. OPERATIONAL PHASES
+
+[Chunk 0: Intake & Validation]
+The process starts when Customer prepares and submits the standardized package into the operations management system. Compliance Officer verifies submission completeness and logs the transaction.
+
+[Chunk 1: Assessment and Standards Compliance]
+Compliance Officer evaluates the request against current organizational risk guidelines, service level commitments, and standard criteria.
+
+[Chunk 2: Governance Decision Gate]
+Compliance Officer renders an approval determination:
+- If adjustments are required or parameters fail baseline criteria, the request returns to Customer for revisions.
+- If criteria are met, the request advances to Risk Analyst for technical processing.
+
+[Chunk 3: Execution and Verification]
+Risk Analyst executes the planned operations, tests operational integrity, and compiles supporting artifacts into the master tracking file.
+
+[Chunk 4: Final Sign-off & Audit Closure]
+Senior Auditor reviews execution outcomes, grants final authorization, updates enterprise registers, and archives the case documentation.

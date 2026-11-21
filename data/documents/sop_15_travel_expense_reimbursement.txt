@@ -1,0 +1,32 @@
+STANDARD OPERATING PROCEDURE: BUSINESS TRAVEL EXPENSE REIMBURSEMENT
+DOCUMENT ID: SOP-FINANCE-015
+VERSION: 1.1
+EFFECTIVE DATE: DECEMBER 2024
+
+1. PURPOSE & PRINCIPLES
+Standardizes operations, compliance checkpoints, and handoffs across organizational tiers for business travel expense reimbursement.
+
+2. PARTICIPATING ACTORS
+- Employee: Initiates trigger event and provides source context.
+- Line Manager: Reviews inputs against regulatory and operational standards.
+- Finance Auditor: Performs primary execution, mitigation, or analytical assessment.
+- Disbursement Clerk: Validates resolution sign-off and records audit trails.
+
+3. OPERATIONAL PHASES
+
+[Chunk 0: Intake & Validation]
+The process starts when Employee prepares and submits the standardized package into the operations management system. Line Manager verifies submission completeness and logs the transaction.
+
+[Chunk 1: Assessment and Standards Compliance]
+Line Manager evaluates the request against current organizational risk guidelines, service level commitments, and standard criteria.
+
+[Chunk 2: Governance Decision Gate]
+Line Manager renders an approval determination:
+- If adjustments are required or parameters fail baseline criteria, the request returns to Employee for revisions.
+- If criteria are met, the request advances to Finance Auditor for technical processing.
+
+[Chunk 3: Execution and Verification]
+Finance Auditor executes the planned operations, tests operational integrity, and compiles supporting artifacts into the master tracking file.
+
+[Chunk 4: Final Sign-off & Audit Closure]
+Disbursement Clerk reviews execution outcomes, grants final authorization, updates enterprise registers, and archives the case documentation.

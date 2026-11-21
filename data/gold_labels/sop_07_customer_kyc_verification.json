@@ -1,0 +1,132 @@
+{
+  "id": "sop_07_customer_kyc_verification",
+  "title": "Customer Know-Your-Customer Verification",
+  "version": "1.0",
+  "description": "",
+  "actors": [
+    "Customer",
+    "Compliance Officer",
+    "Risk Analyst",
+    "Senior Auditor"
+  ],
+  "steps": [
+    {
+      "id": "step_1",
+      "name": "Initiate customer know-your-customer verification intake",
+      "description": "Customer submits initial case payload and Compliance Officer logs ticket",
+      "actor": "Customer",
+      "inputs": [
+        "Standard intake form"
+      ],
+      "outputs": [
+        "Registered case record"
+      ],
+      "next_step_ids": [
+        "step_2"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_0"
+      ],
+      "confidence": 0.98,
+      "is_loop": false
+    },
+    {
+      "id": "step_2",
+      "name": "Evaluate baseline compliance",
+      "description": "Compliance Officer reviews submission against organizational guidelines",
+      "actor": "Compliance Officer",
+      "inputs": [
+        "Registered case record"
+      ],
+      "outputs": [
+        "Compliance assessment"
+      ],
+      "next_step_ids": [
+        "step_3"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_1"
+      ],
+      "confidence": 0.97,
+      "is_loop": false
+    },
+    {
+      "id": "step_3",
+      "name": "Governance approval decision",
+      "description": "Compliance Officer determines whether to accept request or return for revision",
+      "actor": "Compliance Officer",
+      "inputs": [
+        "Compliance assessment"
+      ],
+      "outputs": [
+        "Approval decision"
+      ],
+      "next_step_ids": [
+        "step_1",
+        "step_4"
+      ],
+      "is_decision": true,
+      "conditions": [
+        "Needs revision / Return",
+        "Approved for processing"
+      ],
+      "source_chunk_ids": [
+        "chunk_2"
+      ],
+      "confidence": 0.95,
+      "is_loop": true
+    },
+    {
+      "id": "step_4",
+      "name": "Execute core operations",
+      "description": "Risk Analyst executes required actions and produces verification report",
+      "actor": "Risk Analyst",
+      "inputs": [
+        "Approval decision"
+      ],
+      "outputs": [
+        "Operational execution proof"
+      ],
+      "next_step_ids": [
+        "step_5"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_3"
+      ],
+      "confidence": 0.96,
+      "is_loop": false
+    },
+    {
+      "id": "step_5",
+      "name": "Authorize final sign-off and archive",
+      "description": "Senior Auditor certifies completion and archives permanent records",
+      "actor": "Senior Auditor",
+      "inputs": [
+        "Operational execution proof"
+      ],
+      "outputs": [
+        "Certified archive record"
+      ],
+      "next_step_ids": [],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_4"
+      ],
+      "confidence": 0.99,
+      "is_loop": false
+    }
+  ],
+  "metadata": {
+    "review_status": "NEEDS_MANUAL_REVIEW",
+    "reviewer": null,
+    "notes": "Awaiting manual verification by human reviewer",
+    "domain": "customer"
+  }
+}

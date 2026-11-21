@@ -1,0 +1,30 @@
+STANDARD OPERATING PROCEDURE: CORPORATE EMPLOYEE ONBOARDING
+DOCUMENT ID: SOP-HR-002
+VERSION: 1.4
+EFFECTIVE DATE: NOVEMBER 2024
+
+1. PURPOSE & SCOPE
+Ensures a structured, secure, and welcoming transition for newly hired personnel into corporate operations.
+
+2. ROLES
+- HR Specialist: Coordinates paperwork, background verification, and corporate benefits orientation.
+- IT Support Engineer: Provisions hardware, federated credentials, and SaaS licensing.
+- Hiring Manager: Establishes 30-60-90 day performance goals and team welcome.
+- New Employee: Completes compliance modules, profile setup, and policy acknowledgments.
+
+3. WORKFLOW STEPS
+
+[Chunk 0: Pre-Arrival Verification & Welcome Packet]
+Upon signed offer acceptance, the HR Specialist initiates identity checks, reference verification, and criminal background screening. Once cleared, HR sends the digital welcome packet to the candidate.
+
+[Chunk 1: IT Asset and Access Provisioning]
+One week prior to start date, the IT Support Engineer provisions a corporate workstation, configures multi-factor authentication (MFA), creates domain credentials, and assigns departmental role permissions.
+
+[Chunk 2: Day One Orientation]
+On the first working day, the HR Specialist conducts an official orientation session covering corporate culture, compliance regulations, health insurance, and standard workplace policies.
+
+[Chunk 3: Team Integration & Workspace Setup]
+The Hiring Manager welcomes the New Employee, introduces team colleagues, assigns a peer mentor, and reviews immediate project deliverables and expectations.
+
+[Chunk 4: Policy Acknowledgment and 30-Day Check-in]
+The New Employee completes mandated information security training and submits signed acknowledgment forms. At day 30, the Hiring Manager conducts a formal onboarding assessment.

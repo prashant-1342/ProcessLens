@@ -1,0 +1,164 @@
+{
+  "id": "sop_04_security_incident_response",
+  "title": "Standard Operating Procedure: Cybersecurity Incident Triage & Containment",
+  "version": "1.0",
+  "description": "",
+  "actors": [
+    "SOC Analyst",
+    "Incident Commander",
+    "Security Engineer",
+    "Communications Officer"
+  ],
+  "steps": [
+    {
+      "id": "step_1",
+      "name": "Detect and triage security alert",
+      "description": "SOC Analyst examines SIEM triggers and validates indicators of compromise",
+      "actor": "SOC Analyst",
+      "inputs": [
+        "SIEM alert",
+        "Threat intelligence feed"
+      ],
+      "outputs": [
+        "Triage assessment report"
+      ],
+      "next_step_ids": [
+        "step_2"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_0"
+      ],
+      "confidence": 0.98,
+      "is_loop": false
+    },
+    {
+      "id": "step_2",
+      "name": "Severity classification decision",
+      "description": "Determine whether incident is P1/P2 critical or routine P3/P4",
+      "actor": "SOC Analyst",
+      "inputs": [
+        "Triage assessment report"
+      ],
+      "outputs": [
+        "Severity grade"
+      ],
+      "next_step_ids": [
+        "step_3",
+        "step_4"
+      ],
+      "is_decision": true,
+      "conditions": [
+        "P1/P2 Critical Incident",
+        "P3/P4 Standard Alert"
+      ],
+      "source_chunk_ids": [
+        "chunk_1"
+      ],
+      "confidence": 0.96,
+      "is_loop": false
+    },
+    {
+      "id": "step_3",
+      "name": "Activate war room and incident command",
+      "description": "Incident Commander mobilizes war room and coordinates technical teams",
+      "actor": "Incident Commander",
+      "inputs": [
+        "P1/P2 Severity grade"
+      ],
+      "outputs": [
+        "Active incident war room"
+      ],
+      "next_step_ids": [
+        "step_4"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_2"
+      ],
+      "confidence": 0.97,
+      "is_loop": false
+    },
+    {
+      "id": "step_4",
+      "name": "Isolate affected assets and contain",
+      "description": "Security Engineer isolates compromised endpoints and captures memory dumps",
+      "actor": "Security Engineer",
+      "inputs": [
+        "Asset identifiers",
+        "Containment protocol"
+      ],
+      "outputs": [
+        "Isolated subnet",
+        "Forensic snapshots"
+      ],
+      "next_step_ids": [
+        "step_5"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_3"
+      ],
+      "confidence": 0.99,
+      "is_loop": false
+    },
+    {
+      "id": "step_5",
+      "name": "Eradicate threat and verify containment",
+      "description": "Security Engineer removes malware and validates no re-infection",
+      "actor": "Security Engineer",
+      "inputs": [
+        "Forensic snapshots",
+        "Patch definitions"
+      ],
+      "outputs": [
+        "Cleaned infrastructure"
+      ],
+      "next_step_ids": [
+        "step_4",
+        "step_6"
+      ],
+      "is_decision": true,
+      "conditions": [
+        "Threat persists (loop back)",
+        "Clean verified"
+      ],
+      "source_chunk_ids": [
+        "chunk_4"
+      ],
+      "confidence": 0.94,
+      "is_loop": true
+    },
+    {
+      "id": "step_6",
+      "name": "Publish post-mortem and stakeholder brief",
+      "description": "Communications Officer and Commander publish root cause report",
+      "actor": "Communications Officer",
+      "inputs": [
+        "Incident timeline",
+        "Forensic root cause"
+      ],
+      "outputs": [
+        "Executive incident report",
+        "Post-mortem review"
+      ],
+      "next_step_ids": [],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_5"
+      ],
+      "confidence": 0.98,
+      "is_loop": false
+    }
+  ],
+  "metadata": {
+    "review_status": "NEEDS_MANUAL_REVIEW",
+    "reviewer": null,
+    "notes": "Awaiting manual verification by human reviewer",
+    "domain": "security"
+  }
+}

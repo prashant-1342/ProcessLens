@@ -1,0 +1,161 @@
+{
+  "id": "sop_03_customer_refund",
+  "title": "Standard Operating Procedure: Customer Refund & Credit Processing",
+  "version": "1.0",
+  "description": "",
+  "actors": [
+    "Customer",
+    "Support Agent",
+    "Billing Specialist",
+    "Finance Manager"
+  ],
+  "steps": [
+    {
+      "id": "step_1",
+      "name": "Submit refund request",
+      "description": "Customer lodges request with order ID and justification",
+      "actor": "Customer",
+      "inputs": [
+        "Order receipt",
+        "Return reason"
+      ],
+      "outputs": [
+        "Support ticket"
+      ],
+      "next_step_ids": [
+        "step_2"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_0"
+      ],
+      "confidence": 0.99,
+      "is_loop": false
+    },
+    {
+      "id": "step_2",
+      "name": "Evaluate 30-day policy eligibility",
+      "description": "Support Agent checks purchase age and product return conditions",
+      "actor": "Support Agent",
+      "inputs": [
+        "Support ticket",
+        "Return policy"
+      ],
+      "outputs": [
+        "Eligibility determination"
+      ],
+      "next_step_ids": [
+        "step_3",
+        "step_5"
+      ],
+      "is_decision": true,
+      "conditions": [
+        "Eligible within policy",
+        "Ineligible / Out of policy"
+      ],
+      "source_chunk_ids": [
+        "chunk_1"
+      ],
+      "confidence": 0.97,
+      "is_loop": false
+    },
+    {
+      "id": "step_3",
+      "name": "Evaluate refund amount threshold",
+      "description": "Check if refund exceeds $500 threshold requiring manager sign-off",
+      "actor": "Support Agent",
+      "inputs": [
+        "Eligibility determination",
+        "Order total"
+      ],
+      "outputs": [
+        "Threshold route"
+      ],
+      "next_step_ids": [
+        "step_4",
+        "step_6"
+      ],
+      "is_decision": true,
+      "conditions": [
+        "Amount > $500",
+        "Amount <= $500"
+      ],
+      "source_chunk_ids": [
+        "chunk_2"
+      ],
+      "confidence": 0.96,
+      "is_loop": false
+    },
+    {
+      "id": "step_4",
+      "name": "Manager fraud audit and sign-off",
+      "description": "Finance Manager reviews fraud score and approves high-value refund",
+      "actor": "Finance Manager",
+      "inputs": [
+        "Threshold route",
+        "Customer history"
+      ],
+      "outputs": [
+        "Manager authorization"
+      ],
+      "next_step_ids": [
+        "step_6"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_3"
+      ],
+      "confidence": 0.95,
+      "is_loop": false
+    },
+    {
+      "id": "step_5",
+      "name": "Send rejection notice",
+      "description": "Support Agent closes ticket and sends policy explanation to customer",
+      "actor": "Support Agent",
+      "inputs": [
+        "Eligibility determination"
+      ],
+      "outputs": [
+        "Rejection notice email"
+      ],
+      "next_step_ids": [],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_1"
+      ],
+      "confidence": 0.98,
+      "is_loop": false
+    },
+    {
+      "id": "step_6",
+      "name": "Process payment gateway reversal",
+      "description": "Billing Specialist executes reversal and issues credit notification",
+      "actor": "Billing Specialist",
+      "inputs": [
+        "Manager authorization or standard approved ticket"
+      ],
+      "outputs": [
+        "Gateway transaction receipt",
+        "Customer confirmation"
+      ],
+      "next_step_ids": [],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_4"
+      ],
+      "confidence": 0.99,
+      "is_loop": false
+    }
+  ],
+  "metadata": {
+    "review_status": "NEEDS_MANUAL_REVIEW",
+    "reviewer": null,
+    "notes": "Awaiting manual verification by human reviewer",
+    "domain": "customer"
+  }
+}

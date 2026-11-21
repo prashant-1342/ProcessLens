@@ -1,0 +1,132 @@
+{
+  "id": "sop_11_software_release_deployment",
+  "title": "Automated Software Release & Canary Deployment",
+  "version": "1.0",
+  "description": "",
+  "actors": [
+    "Release Manager",
+    "QA Engineer",
+    "DevOps Engineer",
+    "SRE"
+  ],
+  "steps": [
+    {
+      "id": "step_1",
+      "name": "Initiate automated software release & canary deployment intake",
+      "description": "Release Manager submits initial case payload and QA Engineer logs ticket",
+      "actor": "Release Manager",
+      "inputs": [
+        "Standard intake form"
+      ],
+      "outputs": [
+        "Registered case record"
+      ],
+      "next_step_ids": [
+        "step_2"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_0"
+      ],
+      "confidence": 0.98,
+      "is_loop": false
+    },
+    {
+      "id": "step_2",
+      "name": "Evaluate baseline compliance",
+      "description": "QA Engineer reviews submission against organizational guidelines",
+      "actor": "QA Engineer",
+      "inputs": [
+        "Registered case record"
+      ],
+      "outputs": [
+        "Compliance assessment"
+      ],
+      "next_step_ids": [
+        "step_3"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_1"
+      ],
+      "confidence": 0.97,
+      "is_loop": false
+    },
+    {
+      "id": "step_3",
+      "name": "Governance approval decision",
+      "description": "QA Engineer determines whether to accept request or return for revision",
+      "actor": "QA Engineer",
+      "inputs": [
+        "Compliance assessment"
+      ],
+      "outputs": [
+        "Approval decision"
+      ],
+      "next_step_ids": [
+        "step_1",
+        "step_4"
+      ],
+      "is_decision": true,
+      "conditions": [
+        "Needs revision / Return",
+        "Approved for processing"
+      ],
+      "source_chunk_ids": [
+        "chunk_2"
+      ],
+      "confidence": 0.95,
+      "is_loop": true
+    },
+    {
+      "id": "step_4",
+      "name": "Execute core operations",
+      "description": "DevOps Engineer executes required actions and produces verification report",
+      "actor": "DevOps Engineer",
+      "inputs": [
+        "Approval decision"
+      ],
+      "outputs": [
+        "Operational execution proof"
+      ],
+      "next_step_ids": [
+        "step_5"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_3"
+      ],
+      "confidence": 0.96,
+      "is_loop": false
+    },
+    {
+      "id": "step_5",
+      "name": "Authorize final sign-off and archive",
+      "description": "SRE certifies completion and archives permanent records",
+      "actor": "SRE",
+      "inputs": [
+        "Operational execution proof"
+      ],
+      "outputs": [
+        "Certified archive record"
+      ],
+      "next_step_ids": [],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_4"
+      ],
+      "confidence": 0.99,
+      "is_loop": false
+    }
+  ],
+  "metadata": {
+    "review_status": "NEEDS_MANUAL_REVIEW",
+    "reviewer": null,
+    "notes": "Awaiting manual verification by human reviewer",
+    "domain": "software"
+  }
+}

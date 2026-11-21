@@ -1,0 +1,38 @@
+STANDARD OPERATING PROCEDURE: ACCOUNTS PAYABLE INVOICE APPROVAL
+DOCUMENT ID: SOP-FIN-001
+VERSION: 2.1
+EFFECTIVE DATE: OCTOBER 2024
+
+1. PURPOSE & OBJECTIVE
+This Standard Operating Procedure defines the end-to-end workflow for receiving, validating, authorizing, and disbursing payments for commercial vendor invoices. The goal is to enforce budgetary discipline, prevent duplicate payments, and maintain compliance with internal financial controls.
+
+2. SCOPE & RESPONSIBLE ACTORS
+This procedure applies to all operational expenditure invoices received across company business units.
+- Vendor: External supplier delivering goods/services and generating billing.
+- Accounts Payable Clerk: Initial receiver responsible for header validation and two-way match.
+- Department Manager: Budget owner validating operational receipt of deliverables.
+- Finance Director: Executive officer authorizing high-value capital or operational disbursements.
+
+3. PROCEDURAL WORKFLOW
+
+[Chunk 0: Invoice Intake and Header Verification]
+The process initiates when the Vendor transmits an invoice via the digital invoicing portal. Upon receipt, the Accounts Payable Clerk logs the invoice into the ERP system, verifying vendor identification number, tax registration, and payment terms against the master vendor file.
+
+[Chunk 1: Two-Way Match Verification]
+The Accounts Payable Clerk executes a two-way match comparing invoice line items, unit quantities, and total dollar amounts against the approved purchase order. If a discrepancy greater than 1% exists, the invoice is flagged for vendor clarification.
+
+[Chunk 2: Departmental Budget Review]
+Following two-way match validation, the Accounts Payable Clerk routes the invoice to the Department Manager. The Department Manager reviews the invoice against the departmental operational budget and confirms satisfactory receipt of goods or services.
+
+[Chunk 3: Manager Approval Decision]
+The Department Manager makes an authorization decision:
+- If rejected or disputed, the invoice is returned to the Accounts Payable Clerk with comments to request credit notes or corrections from the vendor.
+- If approved, the system evaluates the invoice total amount:
+  * Invoices under $10,000 proceed directly to payment scheduling.
+  * Invoices equal to or exceeding $10,000 require secondary executive approval by the Finance Director.
+
+[Chunk 4: Executive Finance Authorization]
+For invoices requiring secondary approval, the Finance Director audits contract terms, executive budget allocation, and cash-flow impact. The Finance Director signs off on the authorization ledger.
+
+[Chunk 5: Payment Disbursement & Reconciliation]
+Once fully approved, the Accounts Payable Clerk queues the voucher for electronic funds transfer (EFT) batch execution, triggers remittance notifications to the Vendor, and archives the transaction in the general ledger.

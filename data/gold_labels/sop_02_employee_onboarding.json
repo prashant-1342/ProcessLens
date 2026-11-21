@@ -1,0 +1,133 @@
+{
+  "id": "sop_02_employee_onboarding",
+  "title": "Standard Operating Procedure: Corporate Employee Onboarding",
+  "version": "1.0",
+  "description": "",
+  "actors": [
+    "HR Specialist",
+    "Hiring Manager",
+    "IT Support Engineer",
+    "New Employee"
+  ],
+  "steps": [
+    {
+      "id": "step_1",
+      "name": "Background verification and welcome packet",
+      "description": "HR verifies candidate background and dispatches welcome packet",
+      "actor": "HR Specialist",
+      "inputs": [
+        "Signed offer letter"
+      ],
+      "outputs": [
+        "Cleared background check",
+        "Dispatched packet"
+      ],
+      "next_step_ids": [
+        "step_2"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_0"
+      ],
+      "confidence": 0.98,
+      "is_loop": false
+    },
+    {
+      "id": "step_2",
+      "name": "Hardware and access provisioning",
+      "description": "IT provisions laptop, domain account, and MFA credentials",
+      "actor": "IT Support Engineer",
+      "inputs": [
+        "HR onboarding ticket"
+      ],
+      "outputs": [
+        "Configured laptop",
+        "Active SSO account"
+      ],
+      "next_step_ids": [
+        "step_3"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_1"
+      ],
+      "confidence": 0.97,
+      "is_loop": false
+    },
+    {
+      "id": "step_3",
+      "name": "Conduct Day One HR orientation",
+      "description": "HR leads company overview and benefits enrollment",
+      "actor": "HR Specialist",
+      "inputs": [
+        "Employee presence",
+        "Benefits documentation"
+      ],
+      "outputs": [
+        "Completed orientation signoff"
+      ],
+      "next_step_ids": [
+        "step_4"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_2"
+      ],
+      "confidence": 0.99,
+      "is_loop": false
+    },
+    {
+      "id": "step_4",
+      "name": "Team introduction and 30-day goal alignment",
+      "description": "Hiring manager introduces team, sets deliverables and mentor",
+      "actor": "Hiring Manager",
+      "inputs": [
+        "Department charter",
+        "Role objectives"
+      ],
+      "outputs": [
+        "Signed 30-day performance plan"
+      ],
+      "next_step_ids": [
+        "step_5"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_3"
+      ],
+      "confidence": 0.95,
+      "is_loop": false
+    },
+    {
+      "id": "step_5",
+      "name": "Complete mandatory training and 30-day review",
+      "description": "Employee finishes compliance learning and manager evaluates onboarding",
+      "actor": "New Employee",
+      "inputs": [
+        "Compliance LMS modules"
+      ],
+      "outputs": [
+        "Training certification",
+        "Finalized onboarding record"
+      ],
+      "next_step_ids": [],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_4"
+      ],
+      "confidence": 0.96,
+      "is_loop": false
+    }
+  ],
+  "metadata": {
+    "review_status": "NEEDS_MANUAL_REVIEW",
+    "reviewer": null,
+    "notes": "Awaiting manual verification by human reviewer",
+    "domain": "employee"
+  }
+}

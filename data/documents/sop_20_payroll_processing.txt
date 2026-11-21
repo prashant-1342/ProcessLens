@@ -1,0 +1,32 @@
+STANDARD OPERATING PROCEDURE: MONTHLY CORPORATE PAYROLL EXECUTION
+DOCUMENT ID: SOP-HR-020
+VERSION: 1.1
+EFFECTIVE DATE: DECEMBER 2024
+
+1. PURPOSE & PRINCIPLES
+Standardizes operations, compliance checkpoints, and handoffs across organizational tiers for monthly corporate payroll execution.
+
+2. PARTICIPATING ACTORS
+- Payroll Officer: Initiates trigger event and provides source context.
+- HR Director: Reviews inputs against regulatory and operational standards.
+- Treasury Lead: Performs primary execution, mitigation, or analytical assessment.
+- Internal Auditor: Validates resolution sign-off and records audit trails.
+
+3. OPERATIONAL PHASES
+
+[Chunk 0: Intake & Validation]
+The process starts when Payroll Officer prepares and submits the standardized package into the operations management system. HR Director verifies submission completeness and logs the transaction.
+
+[Chunk 1: Assessment and Standards Compliance]
+HR Director evaluates the request against current organizational risk guidelines, service level commitments, and standard criteria.
+
+[Chunk 2: Governance Decision Gate]
+HR Director renders an approval determination:
+- If adjustments are required or parameters fail baseline criteria, the request returns to Payroll Officer for revisions.
+- If criteria are met, the request advances to Treasury Lead for technical processing.
+
+[Chunk 3: Execution and Verification]
+Treasury Lead executes the planned operations, tests operational integrity, and compiles supporting artifacts into the master tracking file.
+
+[Chunk 4: Final Sign-off & Audit Closure]
+Internal Auditor reviews execution outcomes, grants final authorization, updates enterprise registers, and archives the case documentation.

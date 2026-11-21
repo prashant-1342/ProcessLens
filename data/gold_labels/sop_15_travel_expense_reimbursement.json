@@ -1,0 +1,132 @@
+{
+  "id": "sop_15_travel_expense_reimbursement",
+  "title": "Business Travel Expense Reimbursement",
+  "version": "1.0",
+  "description": "",
+  "actors": [
+    "Employee",
+    "Line Manager",
+    "Finance Auditor",
+    "Disbursement Clerk"
+  ],
+  "steps": [
+    {
+      "id": "step_1",
+      "name": "Initiate business travel expense reimbursement intake",
+      "description": "Employee submits initial case payload and Line Manager logs ticket",
+      "actor": "Employee",
+      "inputs": [
+        "Standard intake form"
+      ],
+      "outputs": [
+        "Registered case record"
+      ],
+      "next_step_ids": [
+        "step_2"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_0"
+      ],
+      "confidence": 0.98,
+      "is_loop": false
+    },
+    {
+      "id": "step_2",
+      "name": "Evaluate baseline compliance",
+      "description": "Line Manager reviews submission against organizational guidelines",
+      "actor": "Line Manager",
+      "inputs": [
+        "Registered case record"
+      ],
+      "outputs": [
+        "Compliance assessment"
+      ],
+      "next_step_ids": [
+        "step_3"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_1"
+      ],
+      "confidence": 0.97,
+      "is_loop": false
+    },
+    {
+      "id": "step_3",
+      "name": "Governance approval decision",
+      "description": "Line Manager determines whether to accept request or return for revision",
+      "actor": "Line Manager",
+      "inputs": [
+        "Compliance assessment"
+      ],
+      "outputs": [
+        "Approval decision"
+      ],
+      "next_step_ids": [
+        "step_1",
+        "step_4"
+      ],
+      "is_decision": true,
+      "conditions": [
+        "Needs revision / Return",
+        "Approved for processing"
+      ],
+      "source_chunk_ids": [
+        "chunk_2"
+      ],
+      "confidence": 0.95,
+      "is_loop": true
+    },
+    {
+      "id": "step_4",
+      "name": "Execute core operations",
+      "description": "Finance Auditor executes required actions and produces verification report",
+      "actor": "Finance Auditor",
+      "inputs": [
+        "Approval decision"
+      ],
+      "outputs": [
+        "Operational execution proof"
+      ],
+      "next_step_ids": [
+        "step_5"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_3"
+      ],
+      "confidence": 0.96,
+      "is_loop": false
+    },
+    {
+      "id": "step_5",
+      "name": "Authorize final sign-off and archive",
+      "description": "Disbursement Clerk certifies completion and archives permanent records",
+      "actor": "Disbursement Clerk",
+      "inputs": [
+        "Operational execution proof"
+      ],
+      "outputs": [
+        "Certified archive record"
+      ],
+      "next_step_ids": [],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_4"
+      ],
+      "confidence": 0.99,
+      "is_loop": false
+    }
+  ],
+  "metadata": {
+    "review_status": "NEEDS_MANUAL_REVIEW",
+    "reviewer": null,
+    "notes": "Awaiting manual verification by human reviewer",
+    "domain": "travel"
+  }
+}

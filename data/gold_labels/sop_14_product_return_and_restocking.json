@@ -1,0 +1,132 @@
+{
+  "id": "sop_14_product_return_and_restocking",
+  "title": "Warehouse Product Return & Restocking",
+  "version": "1.0",
+  "description": "",
+  "actors": [
+    "Customer",
+    "Receiving Clerk",
+    "QA Inspector",
+    "Inventory Manager"
+  ],
+  "steps": [
+    {
+      "id": "step_1",
+      "name": "Initiate warehouse product return & restocking intake",
+      "description": "Customer submits initial case payload and Receiving Clerk logs ticket",
+      "actor": "Customer",
+      "inputs": [
+        "Standard intake form"
+      ],
+      "outputs": [
+        "Registered case record"
+      ],
+      "next_step_ids": [
+        "step_2"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_0"
+      ],
+      "confidence": 0.98,
+      "is_loop": false
+    },
+    {
+      "id": "step_2",
+      "name": "Evaluate baseline compliance",
+      "description": "Receiving Clerk reviews submission against organizational guidelines",
+      "actor": "Receiving Clerk",
+      "inputs": [
+        "Registered case record"
+      ],
+      "outputs": [
+        "Compliance assessment"
+      ],
+      "next_step_ids": [
+        "step_3"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_1"
+      ],
+      "confidence": 0.97,
+      "is_loop": false
+    },
+    {
+      "id": "step_3",
+      "name": "Governance approval decision",
+      "description": "Receiving Clerk determines whether to accept request or return for revision",
+      "actor": "Receiving Clerk",
+      "inputs": [
+        "Compliance assessment"
+      ],
+      "outputs": [
+        "Approval decision"
+      ],
+      "next_step_ids": [
+        "step_1",
+        "step_4"
+      ],
+      "is_decision": true,
+      "conditions": [
+        "Needs revision / Return",
+        "Approved for processing"
+      ],
+      "source_chunk_ids": [
+        "chunk_2"
+      ],
+      "confidence": 0.95,
+      "is_loop": true
+    },
+    {
+      "id": "step_4",
+      "name": "Execute core operations",
+      "description": "QA Inspector executes required actions and produces verification report",
+      "actor": "QA Inspector",
+      "inputs": [
+        "Approval decision"
+      ],
+      "outputs": [
+        "Operational execution proof"
+      ],
+      "next_step_ids": [
+        "step_5"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_3"
+      ],
+      "confidence": 0.96,
+      "is_loop": false
+    },
+    {
+      "id": "step_5",
+      "name": "Authorize final sign-off and archive",
+      "description": "Inventory Manager certifies completion and archives permanent records",
+      "actor": "Inventory Manager",
+      "inputs": [
+        "Operational execution proof"
+      ],
+      "outputs": [
+        "Certified archive record"
+      ],
+      "next_step_ids": [],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_4"
+      ],
+      "confidence": 0.99,
+      "is_loop": false
+    }
+  ],
+  "metadata": {
+    "review_status": "NEEDS_MANUAL_REVIEW",
+    "reviewer": null,
+    "notes": "Awaiting manual verification by human reviewer",
+    "domain": "product"
+  }
+}

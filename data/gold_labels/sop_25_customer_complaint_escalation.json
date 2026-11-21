@@ -1,0 +1,132 @@
+{
+  "id": "sop_25_customer_complaint_escalation",
+  "title": "Executive Customer Complaint Resolution",
+  "version": "1.0",
+  "description": "",
+  "actors": [
+    "Support Specialist",
+    "Tier 2 Lead",
+    "Operations Director",
+    "Customer Relations VP"
+  ],
+  "steps": [
+    {
+      "id": "step_1",
+      "name": "Initiate executive customer complaint resolution intake",
+      "description": "Support Specialist submits initial case payload and Tier 2 Lead logs ticket",
+      "actor": "Support Specialist",
+      "inputs": [
+        "Standard intake form"
+      ],
+      "outputs": [
+        "Registered case record"
+      ],
+      "next_step_ids": [
+        "step_2"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_0"
+      ],
+      "confidence": 0.98,
+      "is_loop": false
+    },
+    {
+      "id": "step_2",
+      "name": "Evaluate baseline compliance",
+      "description": "Tier 2 Lead reviews submission against organizational guidelines",
+      "actor": "Tier 2 Lead",
+      "inputs": [
+        "Registered case record"
+      ],
+      "outputs": [
+        "Compliance assessment"
+      ],
+      "next_step_ids": [
+        "step_3"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_1"
+      ],
+      "confidence": 0.97,
+      "is_loop": false
+    },
+    {
+      "id": "step_3",
+      "name": "Governance approval decision",
+      "description": "Tier 2 Lead determines whether to accept request or return for revision",
+      "actor": "Tier 2 Lead",
+      "inputs": [
+        "Compliance assessment"
+      ],
+      "outputs": [
+        "Approval decision"
+      ],
+      "next_step_ids": [
+        "step_1",
+        "step_4"
+      ],
+      "is_decision": true,
+      "conditions": [
+        "Needs revision / Return",
+        "Approved for processing"
+      ],
+      "source_chunk_ids": [
+        "chunk_2"
+      ],
+      "confidence": 0.95,
+      "is_loop": true
+    },
+    {
+      "id": "step_4",
+      "name": "Execute core operations",
+      "description": "Operations Director executes required actions and produces verification report",
+      "actor": "Operations Director",
+      "inputs": [
+        "Approval decision"
+      ],
+      "outputs": [
+        "Operational execution proof"
+      ],
+      "next_step_ids": [
+        "step_5"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_3"
+      ],
+      "confidence": 0.96,
+      "is_loop": false
+    },
+    {
+      "id": "step_5",
+      "name": "Authorize final sign-off and archive",
+      "description": "Customer Relations VP certifies completion and archives permanent records",
+      "actor": "Customer Relations VP",
+      "inputs": [
+        "Operational execution proof"
+      ],
+      "outputs": [
+        "Certified archive record"
+      ],
+      "next_step_ids": [],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_4"
+      ],
+      "confidence": 0.99,
+      "is_loop": false
+    }
+  ],
+  "metadata": {
+    "review_status": "NEEDS_MANUAL_REVIEW",
+    "reviewer": null,
+    "notes": "Awaiting manual verification by human reviewer",
+    "domain": "customer"
+  }
+}

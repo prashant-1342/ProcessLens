@@ -1,0 +1,28 @@
+STANDARD OPERATING PROCEDURE: IT HARDWARE PROVISIONING
+DOCUMENT ID: SOP-IT-005
+VERSION: 1.8
+
+1. PURPOSE
+Specifies standard process for procuring, configuring, encrypting, and dispatching computing devices.
+
+2. ACTORS
+- Employee: Submits hardware requisition request.
+- IT Asset Manager: Verifies device warranty, inventory availability, and manager approval.
+- Systems Engineer: Implements disk encryption, golden image installation, and software packages.
+- Logistics Courier: Handles tracked shipping and chain-of-custody delivery.
+
+3. WORKFLOW
+
+[Chunk 0: Requisition Intake]
+The Employee submits a hardware request ticket specifying device tier and business justification.
+
+[Chunk 1: Inventory Check and Allocation]
+The IT Asset Manager checks inventory repository:
+- If required device is in stock, it is allocated and checked out in CMDB.
+- If out of stock, purchase order is placed with primary vendor.
+
+[Chunk 2: Imaging and Security Hardening]
+The Systems Engineer deploys enterprise golden OS image, activates BitLocker full-disk encryption, registers device in MDM, and installs security endpoint agents.
+
+[Chunk 3: Courier Dispatch & Delivery Confirmation]
+The Logistics Courier collects packaged device, delivers to employee address with signature verification, and updates CMDB asset tracking status to active.

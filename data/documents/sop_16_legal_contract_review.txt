@@ -1,0 +1,32 @@
+STANDARD OPERATING PROCEDURE: COMMERCIAL LEGAL CONTRACT REVIEW
+DOCUMENT ID: SOP-LEGAL-016
+VERSION: 1.2
+EFFECTIVE DATE: DECEMBER 2024
+
+1. PURPOSE & PRINCIPLES
+Standardizes operations, compliance checkpoints, and handoffs across organizational tiers for commercial legal contract review.
+
+2. PARTICIPATING ACTORS
+- Business Sponsor: Initiates trigger event and provides source context.
+- Legal Counsel: Reviews inputs against regulatory and operational standards.
+- Counterparty: Performs primary execution, mitigation, or analytical assessment.
+- General Counsel: Validates resolution sign-off and records audit trails.
+
+3. OPERATIONAL PHASES
+
+[Chunk 0: Intake & Validation]
+The process starts when Business Sponsor prepares and submits the standardized package into the operations management system. Legal Counsel verifies submission completeness and logs the transaction.
+
+[Chunk 1: Assessment and Standards Compliance]
+Legal Counsel evaluates the request against current organizational risk guidelines, service level commitments, and standard criteria.
+
+[Chunk 2: Governance Decision Gate]
+Legal Counsel renders an approval determination:
+- If adjustments are required or parameters fail baseline criteria, the request returns to Business Sponsor for revisions.
+- If criteria are met, the request advances to Counterparty for technical processing.
+
+[Chunk 3: Execution and Verification]
+Counterparty executes the planned operations, tests operational integrity, and compiles supporting artifacts into the master tracking file.
+
+[Chunk 4: Final Sign-off & Audit Closure]
+General Counsel reviews execution outcomes, grants final authorization, updates enterprise registers, and archives the case documentation.

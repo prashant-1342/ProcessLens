@@ -1,0 +1,33 @@
+STANDARD OPERATING PROCEDURE: CUSTOMER REFUND PROCESSING
+DOCUMENT ID: SOP-OPS-003
+VERSION: 3.0
+
+1. PURPOSE
+Provides standard criteria for evaluating customer refund requests, preventing fraud, and executing timely reimbursements.
+
+2. ACTORS
+- Customer: Submits return/refund request via portal.
+- Support Agent: Evaluates request eligibility against policy timeline.
+- Billing Specialist: Validates payment token and initiates transaction reversal.
+- Finance Manager: Approves high-value refunds exceeding $500.
+
+3. PROCEDURE
+
+[Chunk 0: Refund Request Intake]
+The Customer submits a refund request through the self-service web portal citing reason for return, order reference number, and item receipt.
+
+[Chunk 1: Eligibility and Order Audit]
+The Support Agent reviews order timestamp and return policy terms.
+- If purchase was made within 30 calendar days and product return conditions are satisfied, request is approved.
+- If request is outside 30 days or ineligible, Support Agent issues policy rejection explanation to Customer.
+
+[Chunk 2: Value Threshold Assessment]
+For eligible requests, the Support Agent determines total refund amount:
+- If refund is $500 or less, request proceeds directly to payment reversal.
+- If refund exceeds $500, request is escalated to Finance Manager for review.
+
+[Chunk 3: Manager Authorization]
+The Finance Manager inspects customer transaction history, fraud scores, and merchant processor logs before signing approval.
+
+[Chunk 4: Gateway Reversal and Notification]
+The Billing Specialist issues refund via payment gateway token. Support Agent transmits transaction confirmation receipt to Customer.

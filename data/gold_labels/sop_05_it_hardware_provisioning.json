@@ -1,0 +1,110 @@
+{
+  "id": "sop_05_it_hardware_provisioning",
+  "title": "Standard Operating Procedure: Enterprise IT Hardware Provisioning",
+  "version": "1.0",
+  "description": "",
+  "actors": [
+    "Employee",
+    "IT Asset Manager",
+    "Systems Engineer",
+    "Logistics Courier"
+  ],
+  "steps": [
+    {
+      "id": "step_1",
+      "name": "Submit hardware request",
+      "description": "Employee files requisition ticket for computing equipment",
+      "actor": "Employee",
+      "inputs": [
+        "Business justification"
+      ],
+      "outputs": [
+        "Hardware ticket"
+      ],
+      "next_step_ids": [
+        "step_2"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_0"
+      ],
+      "confidence": 0.99,
+      "is_loop": false
+    },
+    {
+      "id": "step_2",
+      "name": "Verify inventory availability",
+      "description": "IT Asset Manager checks stock status and assigns asset",
+      "actor": "IT Asset Manager",
+      "inputs": [
+        "Hardware ticket",
+        "CMDB inventory database"
+      ],
+      "outputs": [
+        "Assigned hardware unit"
+      ],
+      "next_step_ids": [
+        "step_3"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_1"
+      ],
+      "confidence": 0.97,
+      "is_loop": false
+    },
+    {
+      "id": "step_3",
+      "name": "Deploy image and encrypt device",
+      "description": "Systems Engineer installs golden OS build, MDM enrollment, and BitLocker",
+      "actor": "Systems Engineer",
+      "inputs": [
+        "Assigned hardware unit",
+        "Golden image profile"
+      ],
+      "outputs": [
+        "Configured encrypted device"
+      ],
+      "next_step_ids": [
+        "step_4"
+      ],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_2"
+      ],
+      "confidence": 0.98,
+      "is_loop": false
+    },
+    {
+      "id": "step_4",
+      "name": "Ship and confirm delivery",
+      "description": "Courier delivers device and secures employee signature confirmation",
+      "actor": "Logistics Courier",
+      "inputs": [
+        "Configured encrypted device",
+        "Shipping address"
+      ],
+      "outputs": [
+        "Signed delivery receipt",
+        "Activated CMDB record"
+      ],
+      "next_step_ids": [],
+      "is_decision": false,
+      "conditions": [],
+      "source_chunk_ids": [
+        "chunk_3"
+      ],
+      "confidence": 0.96,
+      "is_loop": false
+    }
+  ],
+  "metadata": {
+    "review_status": "NEEDS_MANUAL_REVIEW",
+    "reviewer": null,
+    "notes": "Awaiting manual verification by human reviewer",
+    "domain": "it"
+  }
+}
