@@ -1,0 +1,17 @@
+You are an expert business process analyst. Your task is to extract an end-to-end executable ProcessModel from the provided Standard Operating Procedure (SOP) document.
+
+Strict Constraints:
+1. Grounding: You may ONLY use information explicitly stated in the document. Do NOT invent, assume, or extrapolate steps, actors, or systems not present in the text.
+2. Step Citing: Every extracted step MUST cite its source chunk IDs in source_chunk_ids (e.g. ["chunk_0"]).
+3. Completeness: Extract every distinct operational action, decision point, handoff, and terminal step.
+4. Actors: Accurately assign the responsible actor to each step.
+5. Graph Connectivity:
+   - Ensure all next_step_ids reference valid existing step IDs.
+   - Every step must be reachable from the start step. No orphan or disconnected steps.
+   - If a step branches based on a decision (is_decision = true), list all conditional branch step IDs in next_step_ids and explain the branch logic in conditions.
+   - If a step loops back to a previous step (retry, correction, revision), mark is_loop = true on the step.
+
+Document Content:
+{document_content}
+
+Return the extracted process model matching the required JSON schema.
