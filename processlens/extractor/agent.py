@@ -7,6 +7,7 @@ from pydantic import ValidationError
 from processlens.core.chunker import DocumentChunk, chunk_document
 from processlens.core.llm import LLMClient, get_llm_client
 from processlens.models.process import ProcessModel
+from processlens.rag.vector_store import VectorStore, get_vector_store
 
 logger = logging.getLogger("processlens.extractor")
 
@@ -19,6 +20,8 @@ class ExtractionResult:
     success: bool = False
     error: Optional[str] = None
     chunks: list[DocumentChunk] = field(default_factory=list)
+    rag_used: bool = False
+    retrieved_chunk_ids: list[str] = field(default_factory=list)
 
 
 class ExtractionAgent:
@@ -28,11 +31,13 @@ class ExtractionAgent:
         prompt_version: str = "v1",
         max_retries: int = 2,
         prompts_dir: Optional[Path] = None,
+        vector_store: Optional[VectorStore] = None,
     ):
         self.llm_client = llm_client or get_llm_client()
         self.prompt_version = prompt_version
         self.max_retries = max_retries
         self.prompts_dir = prompts_dir or Path("prompts")
+        self.vector_store = vector_store or get_vector_store()
 
     def _load_prompt_template(self, version: str) -> str:
         prompt_path = self.prompts_dir / f"{version}.txt"
@@ -44,15 +49,23 @@ class ExtractionAgent:
         self,
         document_text: str,
         document_title: Optional[str] = None,
-        retrieved_chunks: Optional[list[DocumentChunk]] = None,
+        use_rag: bool = False,
+        top_k: int = 3,
+        document_id: Optional[str] = None,
     ) -> ExtractionResult:
-        if retrieved_chunks is not None:
-            chunks = retrieved_chunks
+        all_chunks = chunk_document(document_text)
+        doc_id = document_id or (document_title or "doc_temp").lower().replace(" ", "_")
+
+        retrieved_chunk_ids: list[str] = []
+        if use_rag:
+            self.vector_store.index_chunks(doc_id, all_chunks)
+            active_chunks = self.vector_store.search_for_extraction(doc_id, top_k=top_k)
+            retrieved_chunk_ids = [c.id for c in active_chunks]
         else:
-            chunks = chunk_document(document_text)
+            active_chunks = all_chunks
 
         chunks_text_representation = "\n\n".join(
-            [f"[{c.id.upper()}]\n{c.text}" for c in chunks]
+            [f"[{c.id.upper()}]\n{c.text}" for c in active_chunks]
         )
 
         template = self._load_prompt_template(self.prompt_version)
@@ -71,7 +84,7 @@ class ExtractionAgent:
                     response_model=ProcessModel,
                 )
 
-                chunk_id_set = {c.id.lower() for c in chunks}
+                chunk_id_set = {c.id.lower() for c in all_chunks}
                 for step in model.steps:
                     validated_citations = []
                     for cid in step.source_chunk_ids:
@@ -86,7 +99,9 @@ class ExtractionAgent:
                     attempts=attempt + 1,
                     retry_logs=retry_logs,
                     success=True,
-                    chunks=chunks,
+                    chunks=active_chunks,
+                    rag_used=use_rag,
+                    retrieved_chunk_ids=retrieved_chunk_ids,
                 )
 
             except (ValidationError, ValueError, json.JSONDecodeError) as e:
@@ -120,5 +135,7 @@ class ExtractionAgent:
             retry_logs=retry_logs,
             success=False,
             error=last_error,
-            chunks=chunks,
+            chunks=active_chunks,
+            rag_used=use_rag,
+            retrieved_chunk_ids=retrieved_chunk_ids,
         )
