@@ -147,3 +147,4 @@ class ProcessModel(BaseModel):
                 dfs_detect_cycles(s_id)
 
         return self
+

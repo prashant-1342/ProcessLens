@@ -299,3 +299,4 @@ def test_mocked_llm_structured_generation():
     assert len(result.steps) == 2
     assert result.steps[0].actor == "HR"
     assert result.steps[1].actor == "IT"
+
